@@ -184,13 +184,13 @@ namespace Toolbox.EditorScripts
         {
             EditorGUILayout.BeginVertical();
 
-            GUILayout.Label("Install Unity Packages", _TitleLabelStyle);
+            GUILayout.Label("Install Unity Registry Packages", _TitleLabelStyle);
 
             _ScrollPosForUnityPackages = EditorGUILayout.BeginScrollView(_ScrollPosForUnityPackages, GUILayout.Width(SCROLL_VIEW_WIDTH), GUILayout.Height(SCROLL_VIEW_HEIGHT));
 
             EditorGUI.BeginDisabledGroup(true);
 
-            var unityPackageListFileData = ReadFromFile("Assets/Toolbox/Presets/UnityPackagesList.txt");
+            var unityPackageListFileData = ReadFromFile("Assets/Toolbox/Presets/UnityRegistryPackagesList.txt");
             var packageNameStr = "";
 
             if (unityPackageListFileData != null)
@@ -218,7 +218,7 @@ namespace Toolbox.EditorScripts
 
             if (GUILayout.Button("Edit", GUILayout.Width(BUTTON_WIDTH), GUILayout.Height(BUTTON_HEIGHT)))
             {
-                var path = Application.dataPath + "/Toolbox/Presets/UnityPackagesList.txt";
+                var path = Application.dataPath + "/Toolbox/Presets/UnityRegistryPackagesList.txt";
                 try
                 {
                     System.Diagnostics.Process.Start(path);
