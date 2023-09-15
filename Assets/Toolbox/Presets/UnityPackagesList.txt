@@ -1,0 +1,7 @@
+com.unity.2d.sprite,
+com.unity.cinemachine,
+com.unity.inputsystem,
+com.unity.probuilder,
+com.unity.recorder,
+com.unity.splines,
+com.unity.nuget.newtonsoft-json,
