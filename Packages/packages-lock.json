@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.kylewbanks.scenerefattribute": {
+      "version": "git+https://github.com/KyleBanks/scene-ref-attribute",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "a6879876171725c591459a17febe2c2934c7476d"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
