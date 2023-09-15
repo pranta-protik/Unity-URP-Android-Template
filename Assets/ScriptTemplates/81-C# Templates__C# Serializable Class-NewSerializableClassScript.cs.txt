@@ -1,0 +1,12 @@
+using System;
+
+#ROOTNAMESPACEBEGIN#
+	[Serializable]
+	public class #SCRIPTNAME#
+	{
+		private #SCRIPTNAME#()
+		{
+			#NOTRIM#
+		}
+	}
+#ROOTNAMESPACEEND#
