@@ -107,7 +107,7 @@ namespace Toolbox.EditorScripts
             if (TryOpenScene(relativePath))
             {
                 var prefabPath = "Assets/DemoSceneAssets/Prefabs/DemoScenes/DemoScene.prefab";
-                var lightingSettingsPath = "Assets/DemoSceneAssets/Settings/DemoSceneLightingSettings.asset";
+                var lightingSettingsPath = "Assets/DemoSceneAssets/Settings/DemoSceneLighting.asset";
 
                 if (Object.FindObjectsOfType<GameObject>().Length <= 0)
                 {

@@ -13,7 +13,7 @@ namespace Project.Persistent.SaveSystem
 
         [Header("File Storage Config")]
         [SerializeField] private string _fileName = "data.sav";
-        [ShowIf("@_fileName != \"\"")][SerializeField] private bool _useEncryption;
+        [EnableIf("@_fileName != \"\"")][SerializeField] private bool _useEncryption;
 
         private GameData _gameData;
         private List<IDataPersistence> _dataPersistenceObjectsList;
@@ -22,7 +22,11 @@ namespace Project.Persistent.SaveSystem
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            if (_fileName == "") DebugUtils.LogError("Data Persistence Manager requires a valid filename.");
+            if (_fileName == "")
+            {
+                _useEncryption = false;
+                DebugUtils.LogError("Data Persistence Manager requires a valid filename.");
+            }
         }
 #endif
 

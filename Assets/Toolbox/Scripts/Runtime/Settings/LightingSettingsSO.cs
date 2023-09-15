@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -7,7 +8,7 @@ namespace Toolbox.Settings
 	public class LightingSettingsSO : ScriptableObject
 	{
 		public Material skyboxMaterial;
-		public AmbientMode ambientMode;
+		[EnumToggleButtons] public AmbientMode ambientMode;
 		[ColorUsage(true, true)] public Color ambientColor;
 	}
 }
