@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 
 namespace Toolbox.Settings
 {
-	[CreateAssetMenu(fileName = "NewLightingSettings", menuName = "ScriptableObjects/Lighting Settings")]
+	[CreateAssetMenu(menuName = "ScriptableObjects/Lighting Settings", fileName = "NewLightingSettings")]
 	public class LightingSettingsSO : ScriptableObject
 	{
 		public Material skyboxMaterial;
