@@ -8,17 +8,17 @@ namespace Project.IS
 	{
 		[PreviewField(60), HideLabel]
 		[HorizontalGroup("InventoryItemData", 60)]
-		public Sprite icon;
+		[Required] public Sprite icon;
 
 		[HorizontalGroup("InventoryItemData", MarginLeft = 10)]
 		[VerticalGroup("InventoryItemData/Right"), LabelWidth(120)]
-		public GameObject prefab;
+		[Required] public GameObject prefab;
 
 		[VerticalGroup("InventoryItemData/Right"), LabelWidth(120)]
-		public string id;
+		[Required] public string id;
 
 		[VerticalGroup("InventoryItemData/Right"), LabelWidth(120)]
-		public string displayName;
+		[Required] public string displayName;
 
 		[VerticalGroup("InventoryItemData/Right"), LabelWidth(120)]
 		public int value;

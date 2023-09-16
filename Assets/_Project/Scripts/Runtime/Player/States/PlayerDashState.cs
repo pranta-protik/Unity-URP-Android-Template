@@ -36,6 +36,6 @@ namespace Project
 			_animator.SetBool(_IsDashing, true);
 		}
 
-		public override void FixedUpdate() => _playerController.HandleMovement();
+		public override void FixedUpdate() => _playerController.HandleDash();
 	}
 }

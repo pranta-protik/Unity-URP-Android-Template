@@ -17,10 +17,7 @@ namespace Project.Managers
 		[SerializeField, Range(0f, 15f)] private float _uiScreenDelay = 2f;
 
 #if UNITY_EDITOR
-		private void OnValidate()
-		{
-			this.ValidateRefs();
-		}
+		private void OnValidate() => this.ValidateRefs();
 #endif
 
 		private void Start()

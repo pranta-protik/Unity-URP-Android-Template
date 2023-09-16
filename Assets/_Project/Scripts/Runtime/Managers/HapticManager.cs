@@ -1,3 +1,4 @@
+using DemoScene.Interactables;
 using Sirenix.OdinInspector;
 using Toolbox.Utilities;
 using UnityEngine;
@@ -18,14 +19,14 @@ namespace Project.Managers
 
 		private void Start()
 		{
-			// JumpPad.OnJumpPadInteraction += JumpPad_OnJumpPadInteraction;
-			// DashPad.OnDashPadInteraction += DashPad_OnDashPadInteraction;
+			JumpPad.OnJumpPadInteraction += JumpPad_OnJumpPadInteraction;
+			DashPad.OnDashPadInteraction += DashPad_OnDashPadInteraction;
 		}
 
 		private void OnDestroy()
 		{
-			// JumpPad.OnJumpPadInteraction -= JumpPad_OnJumpPadInteraction;
-			// DashPad.OnDashPadInteraction -= DashPad_OnDashPadInteraction;
+			JumpPad.OnJumpPadInteraction -= JumpPad_OnJumpPadInteraction;
+			DashPad.OnDashPadInteraction -= DashPad_OnDashPadInteraction;
 		}
 
 		private void JumpPad_OnJumpPadInteraction() => HapticUtils.SetHapticLevel(HapticUtils.HapticScale.Medium);

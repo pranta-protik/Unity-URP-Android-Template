@@ -13,17 +13,14 @@ namespace Project.IS
 	{
 		public event UnityAction OnInventoryUpdated;
 
-		[SerializeField, Anywhere] private InventoryItemDataListSO _inventoryItemDataList;
+		[InlineEditor][SerializeField, Anywhere] private InventoryItemDataListSO _inventoryItemDataList;
 		private Dictionary<InventoryItemDataSO, string> _inventoryItemDataDictionary;
 		private Dictionary<string, InventoryItemDataSO> _inventoryItemDataInverseDictionary;
 		[ShowInInspector][ShowIf("@_inventoryItemsDictionary != null")] private Dictionary<InventoryItemDataSO, InventoryItem> _inventoryItemsDictionary;
 		public List<InventoryItem> InventoryItemsList { get; private set; }
 
 #if UNITY_EDITOR
-		private void OnValidate()
-		{
-			this.ValidateRefs();
-		}
+		private void OnValidate() => this.ValidateRefs();
 #endif
 
 		protected override void OnAwake()

@@ -13,6 +13,7 @@ namespace Project
 	public class PlayerController : ValidatedMonoBehaviour, ICharacterActions, IDataPersistence
 	{
 		private const float ZERO_F = 0f;
+		private const float ONE_F = 1f;
 		private static readonly int _Speed = Animator.StringToHash("Speed");
 
 		[TabGroup("References")][SerializeField, Self] private Rigidbody _rigidbody;
@@ -20,7 +21,7 @@ namespace Project
 		[TabGroup("References")][SerializeField, Child] private Animator _animator;
 		[TabGroup("References")][SerializeField, Self] private GroundChecker _groundChecker;
 		[TabGroup("References")][SerializeField, Self] private CeilingChecker _ceilingChecker;
-		[TabGroup("References")][SerializeField, Anywhere] private Joystick _joystick;
+		[TabGroup("References")][SerializeField, Scene] private Joystick _joystick;
 		[TabGroup("References")][SerializeField, Anywhere] private CinemachineVirtualCamera _playerVCam;
 
 		[TabGroup("Movement Settings")][SerializeField] private float _moveSpeed = 300f;
@@ -76,7 +77,6 @@ namespace Project
 
 			_dashTimer = new CountdownTimer(_dashDuration);
 			_dashTimer.OnTimerStart += () => _dashVelocity = _dashForce;
-			_dashTimer.OnTimerStop += () => _dashVelocity = 1f;
 
 			_timersList = new List<Timer>(2) { _jumpTimer, _dashTimer };
 		}
@@ -165,8 +165,6 @@ namespace Project
 			}
 		}
 
-		private void SmoothSpeed(float value) => _currentSpeed = Mathf.SmoothDamp(_currentSpeed, value, ref _velocity, _smoothTime);
-
 		private void HandleRotation()
 		{
 			if (_moveDir != Vector3.zero)
@@ -178,7 +176,7 @@ namespace Project
 
 		private void HandleHorizontalMovement()
 		{
-			var velocity = _dashVelocity * _crouchVelocity * _moveSpeed * Time.fixedDeltaTime * _moveDir;
+			var velocity = _crouchVelocity * _moveSpeed * Time.fixedDeltaTime * _moveDir;
 			_rigidbody.velocity = new Vector3(velocity.x, _rigidbody.velocity.y, velocity.z);
 		}
 
@@ -208,6 +206,28 @@ namespace Project
 		}
 
 		public void Dash() => _dashTimer.Start();
+
+		public void HandleDash()
+		{
+			var normalizedMoveDir = _moveDir.normalized;
+			var velocity = _dashVelocity * _moveSpeed * Time.fixedDeltaTime * normalizedMoveDir;
+
+			if (normalizedMoveDir.magnitude > ZERO_F)
+			{
+				HandleRotation();
+				SmoothSpeed(normalizedMoveDir.magnitude);
+			}
+			else
+			{
+				// Keep applying dash velocity even if there's no input from player
+				velocity = _dashVelocity * _moveSpeed * Time.fixedDeltaTime * transform.forward;
+				SmoothSpeed(ONE_F);
+			}
+
+			_rigidbody.velocity = new Vector3(velocity.x, _rigidbody.velocity.y, velocity.z);
+		}
+
+		private void SmoothSpeed(float value) => _currentSpeed = Mathf.SmoothDamp(_currentSpeed, value, ref _velocity, _smoothTime);
 
 		public void SetCrouchVelocity(float velocity) => _crouchVelocity = velocity;
 
