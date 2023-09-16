@@ -40,6 +40,8 @@ namespace Project.Persistent.SaveSystem
             }
 
             Instance = this;
+
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
 
             _fileDataHandler = new FileDataHandler(Application.persistentDataPath, _fileName, _useEncryption);

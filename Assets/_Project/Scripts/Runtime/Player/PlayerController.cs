@@ -27,33 +27,35 @@ namespace Project
 		[TabGroup("Movement Settings")][SerializeField] private float _rotationSpeed = 500f;
 		[TabGroup("Movement Settings")][SerializeField] private float _stoppingSpeed = 3f;
 		[TabGroup("Movement Settings")][SerializeField] private float _smoothTime = 0.2f;
+		[TabGroup("Movement Settings")][SerializeField] private float _colliderResetDuration = 0.5f;
 
 		[TabGroup("Jump Settings")][SerializeField] private float _jumpForce = 10f;
 		[TabGroup("Jump Settings")][SerializeField] private float _jumpDuration = 0.5f;
 		[TabGroup("Jump Settings")][SerializeField] private float _gravityMultiplier = 3f;
 
-		[TabGroup("Dash Settings")][SerializeField] private float _dashForce = 10f;
+		[TabGroup("Dash Settings")][SerializeField] private float _dashForce = 1.5f;
 		[TabGroup("Dash Settings")][SerializeField] private float _dashDuration = 0.7f;
-		[TabGroup("Dash Settings")][SerializeField] private float _dashColliderHeight = 1.4f;
 		[TabGroup("Dash Settings")][SerializeField] private Vector3 _dashColliderCenter = new(0f, 0.7f, 0f);
+		[TabGroup("Dash Settings")][SerializeField] private float _dashColliderHeight = 1.4f;
 
 		[TabGroup("Crouch Settings")][SerializeField] private float _crouchDecelaration = 0.5f;
-		[TabGroup("Crouch Settings")][SerializeField] private float _crouchColliderHeight = 1.4f;
 		[TabGroup("Crouch Settings")][SerializeField] private Vector3 _crouchColliderCenter = new(0f, 0.7f, 0f);
+		[TabGroup("Crouch Settings")][SerializeField] private float _crouchColliderHeight = 1.4f;
 
 		private float _currentSpeed;
 		private float _velocity;
 		private float _jumpVelocity;
 		private float _dashVelocity = 1f;
 		private float _crouchVelocity = 1f;
-		private float _defaultColliderHeight;
 		private Vector3 _defaultColliderCenter;
+		private float _defaultColliderHeight;
 		private Vector3 _moveDir;
 		private List<Timer> _timersList;
 		private CountdownTimer _jumpTimer;
 		private CountdownTimer _dashTimer;
 		private StateMachine _stateMachine;
 
+		[ShowInInspector, DisplayAsString, Title("Rigidbody Velocity"), HideLabel] public float RigidbodyVelocity => _rigidbody.velocity.magnitude;
 
 		private void Awake()
 		{
@@ -87,7 +89,8 @@ namespace Project
 			var locomotionState = new PlayerLocomotionState(this, _animator, new PlayerLocomotionState.LocomotionStateData(
 				_capsuleCollider,
 				_defaultColliderCenter,
-				_defaultColliderHeight));
+				_defaultColliderHeight,
+				_colliderResetDuration));
 
 			var jumpState = new PlayerJumpState(this, _animator);
 

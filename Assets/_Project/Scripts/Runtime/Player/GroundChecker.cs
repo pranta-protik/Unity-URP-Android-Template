@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Project
@@ -8,8 +9,7 @@ namespace Project
 		[SerializeField] private Vector3 _originOffset = new(0f, 0.05f, 0f);
 		[SerializeField] private float _sphereRadius = 0.02f;
 		[SerializeField] private LayerMask _groundLayers;
-
-		public bool IsGrounded { get; private set; }
+		[ShowInInspector, DisplayAsString] public bool IsGrounded { get; private set; }
 
 		private void Update()
 		{

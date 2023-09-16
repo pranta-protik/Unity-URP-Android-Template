@@ -19,6 +19,10 @@ namespace Project
 			_animator = animator;
 		}
 
+		public virtual void Update()
+		{
+		}
+
 		public virtual void FixedUpdate()
 		{
 		}
@@ -28,10 +32,6 @@ namespace Project
 		}
 
 		public virtual void OnExit()
-		{
-		}
-
-		public virtual void Update()
 		{
 			// DebugUtils.Log("PlayerBaseState.OnExit");
 		}

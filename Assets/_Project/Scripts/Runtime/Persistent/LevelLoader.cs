@@ -22,6 +22,7 @@ namespace Project.Persistent
 
 			Instance = this;
 
+			transform.parent = null;
 			DontDestroyOnLoad(gameObject);
 		}
 

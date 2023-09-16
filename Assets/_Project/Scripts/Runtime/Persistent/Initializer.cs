@@ -8,6 +8,7 @@ namespace Project.Persistent
     {
         private void Awake()
         {
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
 
             if (PlayerPrefs.GetInt(ConstUtils.PREF_FIRST_TIME_PLAYING, 1) == 1)

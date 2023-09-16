@@ -45,6 +45,7 @@ namespace Project
 		public override void OnExit()
 		{
 			// DebugUtils.Log("PlayerCrouchState.OnExit");
+
 			_playerController.SetCrouchVelocity(1f);
 		}
 	}
