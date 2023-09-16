@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33001727901567260}
   - component: {fileID: 23931675992484930}
   - component: {fileID: 64838724365087764}
+  - component: {fileID: -6277337748838227013}
   m_Layer: 8
   m_Name: SM_PolygonPrototype_Buildings_Stairs_1x3_01P
   m_TagString: Untagged
@@ -106,3 +107,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4d167806285be1145935ba43ca5996fd, type: 3}
+--- !u!114 &-6277337748838227013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899605190878714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6937385f3a255b5478d05cee5f5c9d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderersList: []

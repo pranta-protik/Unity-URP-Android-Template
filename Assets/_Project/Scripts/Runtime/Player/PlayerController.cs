@@ -33,13 +33,13 @@ namespace Project
 		[TabGroup("Jump Settings")][SerializeField] private float _gravityMultiplier = 3f;
 
 		[TabGroup("Dash Settings")][SerializeField] private float _dashForce = 10f;
-		[TabGroup("Dash Settings")][SerializeField] private float _dashDuration = 0.5f;
-		[TabGroup("Dash Settings")][SerializeField] private float _dashColliderHeight = 1f;
-		[TabGroup("Dash Settings")][SerializeField] private Vector3 _dashColliderCenter = new(0f, 0.47f, 0f);
+		[TabGroup("Dash Settings")][SerializeField] private float _dashDuration = 0.7f;
+		[TabGroup("Dash Settings")][SerializeField] private float _dashColliderHeight = 1.4f;
+		[TabGroup("Dash Settings")][SerializeField] private Vector3 _dashColliderCenter = new(0f, 0.7f, 0f);
 
 		[TabGroup("Crouch Settings")][SerializeField] private float _crouchDecelaration = 0.5f;
-		[TabGroup("Crouch Settings")][SerializeField] private float _crouchColliderHeight = 1f;
-		[TabGroup("Crouch Settings")][SerializeField] private Vector3 _crouchColliderCenter = new(0f, 0.47f, 0f);
+		[TabGroup("Crouch Settings")][SerializeField] private float _crouchColliderHeight = 1.4f;
+		[TabGroup("Crouch Settings")][SerializeField] private Vector3 _crouchColliderCenter = new(0f, 0.7f, 0f);
 
 		private float _currentSpeed;
 		private float _velocity;

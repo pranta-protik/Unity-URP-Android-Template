@@ -30,7 +30,7 @@ namespace Project
 
 		public override void OnEnter()
 		{
-			DebugUtils.Log("PlayerCrouchState.OnEnter");
+			// DebugUtils.Log("PlayerCrouchState.OnEnter");
 
 			_playerController.SetCrouchVelocity(_crouchStateData.crouchDeceleration);
 
@@ -44,7 +44,7 @@ namespace Project
 
 		public override void OnExit()
 		{
-			DebugUtils.Log("PlayerCrouchState.OnExit");
+			// DebugUtils.Log("PlayerCrouchState.OnExit");
 			_playerController.SetCrouchVelocity(1f);
 		}
 	}

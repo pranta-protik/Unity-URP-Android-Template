@@ -28,7 +28,7 @@ namespace Project
 
 		public override void OnEnter()
 		{
-			DebugUtils.Log("PlayerLocomotionState.OnEnter");
+			// DebugUtils.Log("PlayerLocomotionState.OnEnter");
 
 			_locomotionStateData.capsuleCollider.center = _locomotionStateData.defaultColliderCenter;
 			_locomotionStateData.capsuleCollider.height = _locomotionStateData.defaultColliderHeight;

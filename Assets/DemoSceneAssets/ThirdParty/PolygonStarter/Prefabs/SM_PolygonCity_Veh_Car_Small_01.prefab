@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 33646224532480520}
   - component: {fileID: 23889050435259212}
   - component: {fileID: 64091577265905638}
+  - component: {fileID: 3574369004567302258}
   m_Layer: 8
   m_Name: SM_PolygonCity_Veh_Car_Small_01
   m_TagString: Untagged
@@ -193,9 +194,22 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 3555aa14b7768e148a5d219046a2dc64, type: 3}
+--- !u!114 &3574369004567302258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098664898953688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6937385f3a255b5478d05cee5f5c9d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderersList: []
 --- !u!1 &1227554559889778
 GameObject:
   m_ObjectHideFlags: 0

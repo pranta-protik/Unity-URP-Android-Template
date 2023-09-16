@@ -5,7 +5,7 @@ namespace Project
 	public class CeilingChecker : MonoBehaviour
 	{
 		[SerializeField] private float _ceilingDistance = 1f;
-		[SerializeField] private Vector3 _originOffset = new(0f, 0.95f, 0f);
+		[SerializeField] private Vector3 _originOffset = new(0f, 1.35f, 0f);
 		[SerializeField] private float _sphereRadius = 0.02f;
 		[SerializeField] private LayerMask _ceilingLayers;
 

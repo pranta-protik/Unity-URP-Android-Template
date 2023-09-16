@@ -33,7 +33,7 @@ namespace Project
 
 		public virtual void Update()
 		{
-			DebugUtils.Log("PlayerBaseState.OnExit");
+			// DebugUtils.Log("PlayerBaseState.OnExit");
 		}
 	}
 }

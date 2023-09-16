@@ -11,7 +11,7 @@ namespace Project
 
 		public override void OnEnter()
 		{
-			DebugUtils.Log("PlayerJumpState.OnEnter");
+			// DebugUtils.Log("PlayerJumpState.OnEnter");
 			_animator.SetBool(_IsJumping, true);
 		}
 
