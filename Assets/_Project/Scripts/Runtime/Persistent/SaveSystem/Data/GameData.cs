@@ -12,6 +12,7 @@ namespace Project.Persistent.SaveSystem
 		public SerializableDictionary<int, SerializableDictionary<int, bool>> dictionaryOfScrewdriverHolderDictionary;
 		public SerializableDictionary<string, int> inventorySystemDictionary;
 		public SerializableDictionary<int, SerializableDictionary<string, int>> dictionaryOfInventorySystemDictionary;
+		public SerializableDictionary<string, int> unlockableItemDictionary;
 
 		public GameData()
 		{
@@ -21,6 +22,7 @@ namespace Project.Persistent.SaveSystem
 			dictionaryOfScrewdriverHolderDictionary = new SerializableDictionary<int, SerializableDictionary<int, bool>>();
 			inventorySystemDictionary = new SerializableDictionary<string, int>();
 			dictionaryOfInventorySystemDictionary = new SerializableDictionary<int, SerializableDictionary<string, int>>();
+			unlockableItemDictionary = new SerializableDictionary<string, int>();
 		}
 	}
 }

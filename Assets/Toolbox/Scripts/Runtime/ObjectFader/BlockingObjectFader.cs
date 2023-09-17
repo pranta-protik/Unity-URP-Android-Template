@@ -16,18 +16,20 @@ namespace Toolbox.ObjectFader
 
 		private List<FadeableObject> _blockingObjectsList;
 		private Dictionary<FadeableObject, Coroutine> _runningCoroutinesDictionary;
-		private RaycastHit[] _hitInfos = new RaycastHit[5];
 		private Transform _cameraTransform;
+		private readonly RaycastHit[] _hitInfos = new RaycastHit[5];
 
 		private void Awake()
 		{
+			_cameraTransform = Camera.main.transform;
 			_blockingObjectsList = new List<FadeableObject>();
 			_runningCoroutinesDictionary = new Dictionary<FadeableObject, Coroutine>();
 		}
 
 		private void OnEnable()
 		{
-			_cameraTransform = Camera.main.transform;
+			_blockingObjectsList.Clear();
+			_runningCoroutinesDictionary.Clear();
 			StartCoroutine(CheckForBlockingObjectsRoutine());
 		}
 

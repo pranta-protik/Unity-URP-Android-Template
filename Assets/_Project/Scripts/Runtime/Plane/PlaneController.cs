@@ -17,7 +17,7 @@ namespace Project
 		[TabGroup("References")][SerializeField, Anywhere] private Transform _leftElevator;
 		[TabGroup("References")][SerializeField, Anywhere] private Transform _rightElevator;
 
-		[TabGroup("Movement Settings")][SerializeField] private Vector2 _movementLimit = new(10f, 10f);
+		[TabGroup("Movement Settings")][SerializeField] private Vector2 _movementLimit = new(8f, 6f);
 		[TabGroup("Movement Settings")][SerializeField] private float _movementRange = 5f;
 		[TabGroup("Movement Settings")][SerializeField] private float _movementSpeed = 1.5f;
 		[TabGroup("Movement Settings")][SerializeField] private float _maxRoll = 15f;
