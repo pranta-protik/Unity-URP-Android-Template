@@ -66,7 +66,7 @@ namespace Toolbox.Utilities
 
 		public void Reset(float newTime)
 		{
-			_initialTime = Time;
+			_initialTime = newTime;
 			Reset();
 		}
 	}

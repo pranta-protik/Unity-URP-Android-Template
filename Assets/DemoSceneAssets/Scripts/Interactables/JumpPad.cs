@@ -10,12 +10,14 @@ namespace DemoScene.Interactables
 	{
 		public static event UnityAction OnJumpPadInteraction;
 
-		[SerializeField] private float _scaleTo = 0.6f;
-		[SerializeField] private float _scaleTime = 1f;
-		[SerializeField] private int _vibrato = 5;
-		[SerializeField, Range(0f, 90f)] private float _randomness = 30f;
-		[SerializeField] private bool _fadeOut = true;
-		[EnumToggleButtons, Title("Shake Randomness Mode"), HideLabel][SerializeField] private ShakeRandomnessMode _shakeRandomnessMode = ShakeRandomnessMode.Harmonic;
+		[TabGroup("Jump Settings")][SerializeField] private float _jumpForce = 10f;
+		[TabGroup("Jump Settings")][SerializeField] private float _jumpDuration = 0.5f;
+		[TabGroup("Visual Settings")][SerializeField] private float _scaleTo = 0.6f;
+		[TabGroup("Visual Settings")][SerializeField] private float _scaleTime = 1f;
+		[TabGroup("Visual Settings")][SerializeField] private int _vibrato = 5;
+		[TabGroup("Visual Settings")][SerializeField, Range(0f, 90f)] private float _randomness = 30f;
+		[TabGroup("Visual Settings")][SerializeField] private bool _fadeOut = true;
+		[TabGroup("Visual Settings")][EnumToggleButtons, Title("Shake Randomness Mode"), HideLabel][SerializeField] private ShakeRandomnessMode _shakeRandomnessMode = ShakeRandomnessMode.Harmonic;
 
 		private Vector3 _startScale;
 
@@ -27,7 +29,7 @@ namespace DemoScene.Interactables
 			{
 				OnJumpPadInteraction?.Invoke();
 
-				characterActions.Jump();
+				characterActions.Jump(_jumpForce, _jumpDuration);
 
 				transform.DOKill();
 				transform.localScale = _startScale;

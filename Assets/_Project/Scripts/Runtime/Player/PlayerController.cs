@@ -30,12 +30,8 @@ namespace Project
 		[TabGroup("Movement Settings")][SerializeField] private float _smoothTime = 0.2f;
 		[TabGroup("Movement Settings")][SerializeField] private float _colliderResetDuration = 0.5f;
 
-		[TabGroup("Jump Settings")][SerializeField] private float _jumpForce = 10f;
-		[TabGroup("Jump Settings")][SerializeField] private float _jumpDuration = 0.5f;
 		[TabGroup("Jump Settings")][SerializeField] private float _gravityMultiplier = 3f;
 
-		[TabGroup("Dash Settings")][SerializeField] private float _dashForce = 1.5f;
-		[TabGroup("Dash Settings")][SerializeField] private float _dashDuration = 0.7f;
 		[TabGroup("Dash Settings")][SerializeField] private Vector3 _dashColliderCenter = new(0f, 0.7f, 0f);
 		[TabGroup("Dash Settings")][SerializeField] private float _dashColliderHeight = 1.4f;
 
@@ -72,11 +68,8 @@ namespace Project
 
 		private void SetupTimers()
 		{
-			_jumpTimer = new CountdownTimer(_jumpDuration);
-			_jumpTimer.OnTimerStart += () => _jumpVelocity = _jumpForce;
-
-			_dashTimer = new CountdownTimer(_dashDuration);
-			_dashTimer.OnTimerStart += () => _dashVelocity = _dashForce;
+			_jumpTimer = new CountdownTimer(ZERO_F);
+			_dashTimer = new CountdownTimer(ZERO_F);
 
 			_timersList = new List<Timer>(2) { _jumpTimer, _dashTimer };
 		}
@@ -185,7 +178,12 @@ namespace Project
 			if (!_groundChecker.IsGrounded) _rigidbody.AddForce(Physics.gravity * _gravityMultiplier, ForceMode.Force);
 		}
 
-		public void Jump() => _jumpTimer.Start();
+		public void Jump(float jumpForce, float jumpDuration)
+		{
+			_jumpTimer.Reset(jumpDuration);
+			_jumpVelocity = jumpForce;
+			_jumpTimer.Start();
+		}
 
 		public void HandleJump()
 		{
@@ -205,7 +203,12 @@ namespace Project
 			_rigidbody.velocity = new Vector3(_rigidbody.velocity.x, _jumpVelocity, _rigidbody.velocity.z);
 		}
 
-		public void Dash() => _dashTimer.Start();
+		public void Dash(float dashForce, float dashDuration)
+		{
+			_dashTimer.Reset(dashDuration);
+			_dashVelocity = dashForce;
+			_dashTimer.Start();
+		}
 
 		public void HandleDash()
 		{
