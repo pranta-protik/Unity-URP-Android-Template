@@ -11,7 +11,7 @@ namespace DemoScene.Interactables
 			{
 				// If the contact normal is pointing up, the player has collided with the top of the platform
 				var contact = other.GetContact(0);
-				if (contact.normal.y > 0.5f) return;
+				if (contact.normal.y >= -0.5f) return;
 
 				other.transform.SetParent(transform);
 			}
