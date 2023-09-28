@@ -6,7 +6,7 @@ using Toolbox.Extensions;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Project
+namespace DemoScene
 {
 	public class PlaneController : ValidatedMonoBehaviour
 	{

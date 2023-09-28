@@ -8,7 +8,7 @@ using Sirenix.OdinInspector;
 using Toolbox.Utilities;
 using UnityEngine;
 
-namespace Project
+namespace DemoScene
 {
 	public class ControlSwitcher : Singleton<ControlSwitcher>, IDataPersistence
 	{

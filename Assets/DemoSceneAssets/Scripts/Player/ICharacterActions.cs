@@ -1,4 +1,4 @@
-namespace Project
+namespace DemoScene
 {
 	public interface ICharacterActions
 	{

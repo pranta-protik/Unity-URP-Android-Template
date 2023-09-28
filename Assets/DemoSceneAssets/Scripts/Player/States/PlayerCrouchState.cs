@@ -1,7 +1,7 @@
 using Toolbox.Utilities;
 using UnityEngine;
 
-namespace Project
+namespace DemoScene
 {
 	public class PlayerCrouchState : PlayerBaseState
 	{

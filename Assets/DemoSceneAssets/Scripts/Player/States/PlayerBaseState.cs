@@ -2,7 +2,7 @@ using Toolbox.SM;
 using Toolbox.Utilities;
 using UnityEngine;
 
-namespace Project
+namespace DemoScene
 {
 	public abstract class PlayerBaseState : IState
 	{

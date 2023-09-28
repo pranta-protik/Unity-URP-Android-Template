@@ -10,7 +10,7 @@ using Toolbox.Utilities;
 using UnityEditor;
 #endif
 
-namespace Project
+namespace DemoScene
 {
 	public class PlanePathFollower : ValidatedMonoBehaviour, IDataPersistence
 	{
