@@ -20,16 +20,19 @@ namespace Project.Managers
 		private void Start()
 		{
 			JumpPad.OnJumpPadInteraction += JumpPad_OnJumpPadInteraction;
+			BouncePad.OnBouncePadInteraction += BouncePad_OnBouncePadInteraction;
 			DashPad.OnDashPadInteraction += DashPad_OnDashPadInteraction;
 		}
 
 		private void OnDestroy()
 		{
 			JumpPad.OnJumpPadInteraction -= JumpPad_OnJumpPadInteraction;
+			BouncePad.OnBouncePadInteraction -= BouncePad_OnBouncePadInteraction;
 			DashPad.OnDashPadInteraction -= DashPad_OnDashPadInteraction;
 		}
 
 		private void JumpPad_OnJumpPadInteraction() => HapticUtils.SetHapticLevel(HapticUtils.HapticScale.Medium);
+		private void BouncePad_OnBouncePadInteraction() => HapticUtils.SetHapticLevel(HapticUtils.HapticScale.Medium);
 		private void DashPad_OnDashPadInteraction() => HapticUtils.SetHapticLevel(HapticUtils.HapticScale.Medium);
 	}
 }

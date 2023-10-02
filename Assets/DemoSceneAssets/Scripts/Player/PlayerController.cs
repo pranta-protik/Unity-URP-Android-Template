@@ -30,10 +30,10 @@ namespace DemoScene
 		[TabGroup("Movement Settings")][SerializeField] private float _smoothTime = 0.2f;
 		[TabGroup("Movement Settings")][SerializeField] private float _colliderResetDuration = 0.5f;
 
-		[TabGroup("Jump Settings")] [SerializeField] private float _jumpDuration = 0.5f;
+		[TabGroup("Jump Settings")] [SerializeField] private float _defaultJumpDuration = 0.5f;
 		[TabGroup("Jump Settings")][SerializeField] private float _gravityMultiplier = 3f;
 
-		[TabGroup("Dash Settings")] [SerializeField] private float _dashDuration = 0.7f;
+		[TabGroup("Dash Settings")] [SerializeField] private float _defaultDashDuration = 0.7f;
 		[TabGroup("Dash Settings")][SerializeField] private Vector3 _dashColliderCenter = new(0f, 0.7f, 0f);
 		[TabGroup("Dash Settings")][SerializeField] private float _dashColliderHeight = 1.4f;
 
@@ -70,8 +70,8 @@ namespace DemoScene
 
 		private void SetupTimers()
 		{
-			_jumpTimer = new CountdownTimer(_jumpDuration);
-			_dashTimer = new CountdownTimer(_dashDuration);
+			_jumpTimer = new CountdownTimer(_defaultJumpDuration);
+			_dashTimer = new CountdownTimer(_defaultDashDuration);
 
 			_timersList = new List<Timer>(2) { _jumpTimer, _dashTimer };
 		}

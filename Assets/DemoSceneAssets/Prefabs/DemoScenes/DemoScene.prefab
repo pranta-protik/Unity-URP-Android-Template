@@ -1744,11 +1744,9 @@ MonoBehaviour:
   _stoppingSpeed: 3
   _smoothTime: 0.2
   _colliderResetDuration: 0.5
-  _jumpForce: 10
-  _jumpDuration: 0.5
+  _defaultJumpDuration: 0.5
   _gravityMultiplier: 3
-  _dashForce: 1.5
-  _dashDuration: 0.7
+  _defaultDashDuration: 0.7
   _dashColliderCenter: {x: 0, y: 0.7, z: 0}
   _dashColliderHeight: 1.4
   _crouchDecelaration: 0.5
@@ -2863,6 +2861,7 @@ Transform:
   - {fileID: 1250435035956642001}
   - {fileID: 6568178259673472426}
   - {fileID: 5289726793691653762}
+  - {fileID: 1914336217191117447}
   - {fileID: 8444848299510089809}
   - {fileID: 801530008374819453}
   m_Father: {fileID: 8209167290451899746}
@@ -3255,6 +3254,38 @@ Transform:
   m_Father: {fileID: 3911212808107976873}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7711331248691886505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1914336217191117447}
+  m_Layer: 0
+  m_Name: BouncePads
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1914336217191117447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711331248691886505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2845980230112339465}
+  m_Father: {fileID: 3911212808107976873}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8131448439825959616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3638,6 +3669,85 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
+--- !u!1001 &315424257063468779
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1914336217191117447}
+    m_Modifications:
+    - target: {fileID: 2530582361405282530, guid: da6d6cd17e5a1274e87fb03eb0ea1cba,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530582361405282530, guid: da6d6cd17e5a1274e87fb03eb0ea1cba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530582361405282530, guid: da6d6cd17e5a1274e87fb03eb0ea1cba,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530582361405282530, guid: da6d6cd17e5a1274e87fb03eb0ea1cba,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530582361405282530, guid: da6d6cd17e5a1274e87fb03eb0ea1cba,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530582361405282530, guid: da6d6cd17e5a1274e87fb03eb0ea1cba,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530582361405282530, guid: da6d6cd17e5a1274e87fb03eb0ea1cba,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530582361405282530, guid: da6d6cd17e5a1274e87fb03eb0ea1cba,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530582361405282530, guid: da6d6cd17e5a1274e87fb03eb0ea1cba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530582361405282530, guid: da6d6cd17e5a1274e87fb03eb0ea1cba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530582361405282530, guid: da6d6cd17e5a1274e87fb03eb0ea1cba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8366007841198434767, guid: da6d6cd17e5a1274e87fb03eb0ea1cba,
+        type: 3}
+      propertyPath: m_Name
+      value: BouncePad
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da6d6cd17e5a1274e87fb03eb0ea1cba, type: 3}
+--- !u!4 &2845980230112339465 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2530582361405282530, guid: da6d6cd17e5a1274e87fb03eb0ea1cba,
+    type: 3}
+  m_PrefabInstance: {fileID: 315424257063468779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &784881341712531803
 PrefabInstance:
   m_ObjectHideFlags: 0
