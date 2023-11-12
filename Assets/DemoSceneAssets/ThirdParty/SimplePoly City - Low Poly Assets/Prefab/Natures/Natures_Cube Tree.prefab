@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2300000}
   - component: {fileID: -6862404994913722608}
   - component: {fileID: -9127081891834835876}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Natures_Cube Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
