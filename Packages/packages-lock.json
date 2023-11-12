@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "a6879876171725c591459a17febe2c2934c7476d"
+      "hash": "b83c1fbbff020f4d29a937eb7ab13af60aabfb11"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
@@ -46,7 +46,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.25",
+      "version": "3.0.26",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -105,7 +105,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.recorder": {
-      "version": "4.0.1",
+      "version": "4.0.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {
