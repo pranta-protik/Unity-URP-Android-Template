@@ -1346,6 +1346,7 @@ MonoBehaviour:
   _crouchDecelaration: 0.5
   _crouchColliderCenter: {x: 0, y: 0.7, z: 0}
   _crouchColliderHeight: 1.4
+  _defaultStunDuration: 2
 --- !u!114 &9007439728576108305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4403,7 +4404,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46f95e95c87f73742bf05d2f934f32f1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7241777649988667642}
   m_SourcePrefab: {fileID: 100100000, guid: 46f95e95c87f73742bf05d2f934f32f1, type: 3}
 --- !u!95 &4264826954368869144 stripped
 Animator:
@@ -4411,6 +4416,24 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 7657562119602855561}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7387110638770152408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 46f95e95c87f73742bf05d2f934f32f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7657562119602855561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7241777649988667642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387110638770152408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec385481fbaa9ea4384d6fd82854aab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7912711640780847458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 46f95e95c87f73742bf05d2f934f32f1,

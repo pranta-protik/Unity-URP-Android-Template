@@ -9,6 +9,7 @@ namespace DemoScene
 		protected static readonly int _IsJumping = Animator.StringToHash("IsJumping");
 		protected static readonly int _IsDashing = Animator.StringToHash("IsDashing");
 		protected static readonly int _IsCrouching = Animator.StringToHash("IsCrouching");
+		protected static readonly int _IsStunned = Animator.StringToHash("IsStunned");
 
 		protected readonly PlayerController _playerController;
 		protected readonly Animator _animator;

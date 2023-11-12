@@ -544,6 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096113e286ed39f41812ebcdf8b74ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rotationType: 0
   _rotationAxis: {x: 0, y: 0, z: 1}
   _rotationSpeed: 200
 --- !u!1 &5477292092378314313
@@ -1163,7 +1164,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

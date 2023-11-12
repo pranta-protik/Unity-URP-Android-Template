@@ -41,6 +41,8 @@ namespace DemoScene
 		[TabGroup("Crouch Settings")][SerializeField] private Vector3 _crouchColliderCenter = new(0f, 0.7f, 0f);
 		[TabGroup("Crouch Settings")][SerializeField] private float _crouchColliderHeight = 1.4f;
 
+		[TabGroup("Stun Settings")] [SerializeField] private float _defaultStunDuration = 2f;
+		
 		private float _currentSpeed;
 		private float _velocity;
 		private float _jumpVelocity;
@@ -52,6 +54,7 @@ namespace DemoScene
 		private List<Timer> _timersList;
 		private CountdownTimer _jumpTimer;
 		private CountdownTimer _dashTimer;
+		private CountdownTimer _stunTimer;
 		private StateMachine _stateMachine;
 
 		[ShowInInspector, DisplayAsString, Title("Rigidbody Velocity"), HideLabel] public float RigidbodyVelocity => _rigidbody.velocity.magnitude;
@@ -72,8 +75,9 @@ namespace DemoScene
 		{
 			_jumpTimer = new CountdownTimer(_defaultJumpDuration);
 			_dashTimer = new CountdownTimer(_defaultDashDuration);
+			_stunTimer = new CountdownTimer(_defaultStunDuration);
 
-			_timersList = new List<Timer>(2) { _jumpTimer, _dashTimer };
+			_timersList = new List<Timer>(3) { _jumpTimer, _dashTimer, _stunTimer };
 		}
 
 		private void SetupStateMachine()
@@ -101,14 +105,19 @@ namespace DemoScene
 				_crouchDecelaration
 				));
 
-			// Declate Transitions
+			var stunnedState = new PlayerStunnedState(this, _animator);
+			
+			// Declare Transitions
 			At(locomotionState, jumpState, new FuncPredicate(() => _jumpTimer.IsRunning));
 			At(locomotionState, dashState, new FuncPredicate(() => _dashTimer.IsRunning));
 			At(locomotionState, crouchState, new FuncPredicate(() => _ceilingChecker.IsTouchingCeiling));
+			At(locomotionState, stunnedState, new FuncPredicate(()=> _stunTimer.IsRunning));
 			At(dashState, jumpState, new FuncPredicate(() => _jumpTimer.IsRunning));
 			At(dashState, crouchState, new FuncPredicate(() => !_dashTimer.IsRunning && _ceilingChecker.IsTouchingCeiling));
 
-			Any(locomotionState, new FuncPredicate(() => _groundChecker.IsGrounded && !_jumpTimer.IsRunning && !_dashTimer.IsRunning && !_ceilingChecker.IsTouchingCeiling));
+			Any(locomotionState,
+				new FuncPredicate(() =>
+					_groundChecker.IsGrounded && !_jumpTimer.IsRunning && !_dashTimer.IsRunning && !_ceilingChecker.IsTouchingCeiling && !_stunTimer.IsRunning));
 
 			// Set initial state
 			_stateMachine.SetState(locomotionState);
@@ -231,6 +240,8 @@ namespace DemoScene
 
 			_rigidbody.velocity = new Vector3(velocity.x, _rigidbody.velocity.y, velocity.z);
 		}
+
+		public void Stun() => _stunTimer.Start();
 
 		private void SmoothSpeed(float value) => _currentSpeed = Mathf.SmoothDamp(_currentSpeed, value, ref _velocity, _smoothTime);
 

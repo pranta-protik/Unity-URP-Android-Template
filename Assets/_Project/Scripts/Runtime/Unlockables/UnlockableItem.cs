@@ -35,7 +35,7 @@ namespace Project.Unlockables
 			_isUnlocked = _depositedAmount >= _unlockCost;
 
 			_paymentPlatform.gameObject.SetActive(!_isUnlocked);
-			// _interactionPlatform.gameObject.SetActive(_isUnlocked);
+			_interactionPlatform.gameObject.SetActive(_isUnlocked);
 		}
 
 		public void Deposit(int amount)
@@ -57,7 +57,7 @@ namespace Project.Unlockables
 		protected virtual void UnlockItem()
 		{
 			_paymentPlatform.gameObject.SetActive(false);
-			// _interactionPlatform.gameObject.SetActive(true);
+			_interactionPlatform.gameObject.SetActive(true);
 		}
 
 		public bool CanDeposit()

@@ -36,6 +36,7 @@ namespace DemoScene
 			_animator.SetBool(_IsJumping, false);
 			_animator.SetBool(_IsDashing, false);
 			_animator.SetBool(_IsCrouching, false);
+			_animator.SetBool(_IsStunned, false);
 		}
 
 		public override void Update()
