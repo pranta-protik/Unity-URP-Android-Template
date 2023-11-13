@@ -1,3 +1,4 @@
+using KBCore.Refs;
 using Project.Unlockables;
 using UnityEngine;
 
@@ -5,20 +6,20 @@ namespace DemoScene.Unlockables
 {
 	public class PlaneHanger : UnlockableItem
 	{
-		[SerializeField] private GameObject _shield;
+		[SerializeField, Child] private ProtectiveShield _protectiveShield;
 		
 		protected override void Start()
 		{
 			base.Start();
 			
-			_shield.SetActive(!_isUnlocked);
+			_protectiveShield.ToggleStatus(!_isUnlocked);
 		}
 
 		protected override void UnlockItem()
 		{
 			base.UnlockItem();
 			
-			_shield.SetActive(false);
+			_protectiveShield.ToggleStatus(false);
 		}
 
 		public override void Interact(Transform interactor)

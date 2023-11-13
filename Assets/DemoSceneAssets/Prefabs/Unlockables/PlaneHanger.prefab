@@ -139,7 +139,7 @@ MonoBehaviour:
   _idlingSpot: {fileID: 2180052077518056999}
   _id: 08b33ada-57e6-4cbc-84ec-374dcfad2539
   _unlockCost: 5
-  _shield: {fileID: 4651854141311573068}
+  _protectiveShield: {fileID: 7333772795869504880}
 --- !u!1001 &141171995337226903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1771,12 +1771,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6825852224626156913}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4651854141311573068 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2176638156955760957, guid: a4dae1411f2cf744994551e69c9e4a66,
+--- !u!114 &7333772795869504880 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4286450403955916801, guid: a4dae1411f2cf744994551e69c9e4a66,
     type: 3}
   m_PrefabInstance: {fileID: 6825852224626156913}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9d1562329125e49936024b45f19981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7686679314640819485
 PrefabInstance:
   m_ObjectHideFlags: 0
