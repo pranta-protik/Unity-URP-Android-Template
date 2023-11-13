@@ -18,9 +18,12 @@ namespace Toolbox.EditorScripts
             _TitleLabelStyle = new GUIStyle
             {
                 fontStyle = FontStyle.Bold,
-                alignment = TextAnchor.MiddleCenter
+                alignment = TextAnchor.MiddleCenter,
+                normal =
+                {
+                    textColor = Color.white
+                }
             };
-            _TitleLabelStyle.normal.textColor = Color.white;
         }
 
         private void OnGUI()

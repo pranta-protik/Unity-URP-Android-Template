@@ -30,9 +30,12 @@ namespace Toolbox.EditorScripts
             _TitleLabelStyle = new GUIStyle
             {
                 fontStyle = FontStyle.Bold,
-                alignment = TextAnchor.MiddleCenter
+                alignment = TextAnchor.MiddleCenter,
+                normal =
+                {
+                    textColor = Color.white
+                }
             };
-            _TitleLabelStyle.normal.textColor = Color.white;
         }
 
         private void OnGUI()
@@ -74,7 +77,8 @@ namespace Toolbox.EditorScripts
 
             GUILayout.Label("Create Default Folders", _TitleLabelStyle);
 
-            _ScrollPosForDefaultFolders = EditorGUILayout.BeginScrollView(_ScrollPosForDefaultFolders, GUILayout.Width(SCROLL_VIEW_WIDTH), GUILayout.Height(SCROLL_VIEW_HEIGHT));
+            _ScrollPosForDefaultFolders =
+                EditorGUILayout.BeginScrollView(_ScrollPosForDefaultFolders, GUILayout.Width(SCROLL_VIEW_WIDTH), GUILayout.Height(SCROLL_VIEW_HEIGHT));
 
             EditorGUI.BeginDisabledGroup(true);
 
@@ -130,7 +134,8 @@ namespace Toolbox.EditorScripts
 
             GUILayout.Label("Create Default Scenes", _TitleLabelStyle);
 
-            _ScrollPosForDefaultScenes = EditorGUILayout.BeginScrollView(_ScrollPosForDefaultScenes, GUILayout.Width(SCROLL_VIEW_WIDTH), GUILayout.Height(SCROLL_VIEW_HEIGHT));
+            _ScrollPosForDefaultScenes =
+                EditorGUILayout.BeginScrollView(_ScrollPosForDefaultScenes, GUILayout.Width(SCROLL_VIEW_WIDTH), GUILayout.Height(SCROLL_VIEW_HEIGHT));
 
             EditorGUI.BeginDisabledGroup(true);
 
@@ -186,7 +191,8 @@ namespace Toolbox.EditorScripts
 
             GUILayout.Label("Install Unity Registry Packages", _TitleLabelStyle);
 
-            _ScrollPosForUnityPackages = EditorGUILayout.BeginScrollView(_ScrollPosForUnityPackages, GUILayout.Width(SCROLL_VIEW_WIDTH), GUILayout.Height(SCROLL_VIEW_HEIGHT));
+            _ScrollPosForUnityPackages =
+                EditorGUILayout.BeginScrollView(_ScrollPosForUnityPackages, GUILayout.Width(SCROLL_VIEW_WIDTH), GUILayout.Height(SCROLL_VIEW_HEIGHT));
 
             EditorGUI.BeginDisabledGroup(true);
 
@@ -240,7 +246,8 @@ namespace Toolbox.EditorScripts
 
             GUILayout.Label("Install Open Sources", _TitleLabelStyle);
 
-            _ScrollPosForOpenSources = EditorGUILayout.BeginScrollView(_ScrollPosForOpenSources, GUILayout.Width(SCROLL_VIEW_WIDTH), GUILayout.Height(SCROLL_VIEW_HEIGHT));
+            _ScrollPosForOpenSources =
+                EditorGUILayout.BeginScrollView(_ScrollPosForOpenSources, GUILayout.Width(SCROLL_VIEW_WIDTH), GUILayout.Height(SCROLL_VIEW_HEIGHT));
 
             EditorGUI.BeginDisabledGroup(true);
 
@@ -318,7 +325,8 @@ namespace Toolbox.EditorScripts
 
             EditorGUILayout.EndHorizontal();
 
-            _ScrollPosForAssetStoreAssets = EditorGUILayout.BeginScrollView(_ScrollPosForAssetStoreAssets, GUILayout.Width(SCROLL_VIEW_WIDTH), GUILayout.Height(SCROLL_VIEW_HEIGHT));
+            _ScrollPosForAssetStoreAssets =
+                EditorGUILayout.BeginScrollView(_ScrollPosForAssetStoreAssets, GUILayout.Width(SCROLL_VIEW_WIDTH), GUILayout.Height(SCROLL_VIEW_HEIGHT));
 
             EditorGUI.BeginDisabledGroup(true);
 
@@ -397,7 +405,8 @@ namespace Toolbox.EditorScripts
 
             EditorGUILayout.EndHorizontal();
 
-            _ScrollPosForLocalDriveAssets = EditorGUILayout.BeginScrollView(_ScrollPosForLocalDriveAssets, GUILayout.Width(SCROLL_VIEW_WIDTH), GUILayout.Height(SCROLL_VIEW_HEIGHT));
+            _ScrollPosForLocalDriveAssets =
+                EditorGUILayout.BeginScrollView(_ScrollPosForLocalDriveAssets, GUILayout.Width(SCROLL_VIEW_WIDTH), GUILayout.Height(SCROLL_VIEW_HEIGHT));
 
             EditorGUI.BeginDisabledGroup(true);
 
@@ -464,6 +473,7 @@ namespace Toolbox.EditorScripts
                         outputList.Add(output.Trim());
                     }
                 }
+
                 return outputList.ToArray();
             }
             catch

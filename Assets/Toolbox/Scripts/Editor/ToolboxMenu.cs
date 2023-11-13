@@ -9,5 +9,8 @@ namespace Toolbox.EditorScripts
 
         [MenuItem("Tools/Toolbox/Scene Setup")]
         private static void SceneSetup() => SceneSetupWindow.InitWindow();
+
+        [MenuItem("Tools/Toolbox/Android Setup")]
+        private static void AndroidSetup() => AndroidSetupWindow.InitWindow();
     }
 }
