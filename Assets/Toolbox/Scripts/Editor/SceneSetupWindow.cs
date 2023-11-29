@@ -7,7 +7,7 @@ namespace Toolbox.EditorScripts
     {
         private const string WINDOW_TITLE = "Scene Setup";
         private const float WINDOW_WIDTH = 500f;
-        private const float WINDOW_HEIGHT = 500f;
+        private const float WINDOW_HEIGHT = 370f;
         private const float BUTTON_HEIGHT = 32f;
         private const float VERTICAL_SPACE = 10;
         private static SceneSetupWindow _SceneSetupWindow;
@@ -34,19 +34,20 @@ namespace Toolbox.EditorScripts
 
             SetupPersistentScene();
 
-            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+            EditorGUILayout.Space(VERTICAL_SPACE);
+            EditorGUILayout.Space(VERTICAL_SPACE);
 
             SetupSplashScene();
 
-            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+            EditorGUILayout.Space(VERTICAL_SPACE);
+            EditorGUILayout.Space(VERTICAL_SPACE);
 
             SetupUIScene();
 
-            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+            EditorGUILayout.Space(VERTICAL_SPACE);
+            EditorGUILayout.Space(VERTICAL_SPACE);
 
             SetupGameScene();
-
-            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
 
             EditorGUILayout.EndVertical();
 
@@ -56,6 +57,8 @@ namespace Toolbox.EditorScripts
         private static void SetupPersistentScene()
         {
             GUILayout.Label("Setup Persistent Scene", _TitleLabelStyle);
+
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
 
             EditorGUILayout.BeginHorizontal();
 
@@ -78,6 +81,8 @@ namespace Toolbox.EditorScripts
         {
             GUILayout.Label("Setup Splash Scene", _TitleLabelStyle);
 
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+
             EditorGUILayout.BeginHorizontal();
 
             var relativePath = "_Project/Scenes/Splash.unity";
@@ -99,6 +104,8 @@ namespace Toolbox.EditorScripts
         {
             GUILayout.Label("Setup UI Scene", _TitleLabelStyle);
 
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+
             EditorGUILayout.BeginHorizontal();
 
             var relativePath = "_Project/Scenes/UI.unity";
@@ -118,7 +125,9 @@ namespace Toolbox.EditorScripts
 
         private static void SetupGameScene()
         {
-            GUILayout.Label("Setup Game Scene", _TitleLabelStyle);
+            GUILayout.Label("Setup Demo Game Scene", _TitleLabelStyle);
+
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
 
             EditorGUILayout.BeginHorizontal();
 

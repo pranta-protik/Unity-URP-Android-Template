@@ -53,7 +53,8 @@ namespace Toolbox.EditorScripts
                     InstantiateAsPrefab(levelLoaderPrefab, "LevelLoader");
                 }
 
-                var dataPersistenceManagerPrefab = AssetDatabase.LoadAssetAtPath("Assets/_Project/Prefabs/Persistent/DataPersistenceManager.prefab", typeof(GameObject)) as GameObject;
+                var dataPersistenceManagerPrefab =
+                    AssetDatabase.LoadAssetAtPath("Assets/_Project/Prefabs/Persistent/DataPersistenceManager.prefab", typeof(GameObject)) as GameObject;
                 if (!GameObject.Find("DataPersistenceManager"))
                 {
                     InstantiateAsPrefab(dataPersistenceManagerPrefab, "DataPersistenceManager");
@@ -106,8 +107,8 @@ namespace Toolbox.EditorScripts
         {
             if (TryOpenScene(relativePath))
             {
-                var prefabPath = "Assets/DemoSceneAssets/Prefabs/DemoScenes/DemoScene.prefab";
-                var lightingSettingsPath = "Assets/DemoSceneAssets/Settings/DemoSceneLighting.asset";
+                var prefabPath = "Assets/DemoSceneAssets/Prefabs/DemoScenes/GameDemoScene.prefab";
+                var lightingSettingsPath = "Assets/DemoSceneAssets/Settings/GameDemoSceneLighting.asset";
 
                 if (Object.FindObjectsOfType<GameObject>().Length <= 0)
                 {
