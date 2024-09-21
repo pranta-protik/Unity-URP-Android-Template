@@ -7,7 +7,7 @@ namespace Toolbox.SM
 	{
 		private StateNode _current;
 		private readonly Dictionary<Type, StateNode> _nodesDictionary = new();
-		private readonly HashSet<Transition> _anyTransitionsSet = new();
+		private readonly HashSet<ITransition> _anyTransitionsSet = new();
 
 		public void SetState(IState state)
 		{
